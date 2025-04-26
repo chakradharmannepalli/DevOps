@@ -8,3 +8,7 @@ y=a-b
 
 #Power
 y= a**b
+
+#Multiplication
+z=a*b
+
