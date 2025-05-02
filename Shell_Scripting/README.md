@@ -13,6 +13,7 @@
    ```bash
    touch filename
    touch step_{1..100}.txt #To Create Multiple files at a time use.
+   touch -d tomorrow 1 # To create a file for tomorrow
  4. **To create directories or folders**
     ```bash
     mkdir first
@@ -54,7 +55,7 @@
 14. **To clear the terminal**
     ```bash
     clear
-
-
-
-   
+15. **To list the hidden files**
+    ```bash
+      ls -a
+      ls -ltr
