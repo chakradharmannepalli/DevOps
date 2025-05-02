@@ -22,3 +22,39 @@
    Now you have entered into file use `i` to write, after finishing writing click `esc`+`:wq!` to save the file
    ```bash
    vim first.txt 
+6. **To go to another directory or folder**
+    ```bash
+    cd first
+    cd first/second
+7. **To go back to previous folder**
+   ```bash
+   cd ..
+   #To go back multiple directories
+   cd ../..
+8. **Removes an empty directory**
+   ```bash
+   rmdir first
+9. **Removes files or directories.**
+    ```bash
+    rm file.txt
+    rm -r directory_name
+ 10. **Concatenates and displays the content of a file.**
+     ```bash
+     cat first.tx
+ 11. **cp: Copies files or directories.**
+     ```bash
+    cp file1.txt file2.txt
+    cp file1.txt /home/ubuntu/second # To move the file to another folder ore directory
+12. **Moves or renames files or directories.**
+    ```bash
+      mv file1.txt /home/ubuntu/second
+13. **Displays the manual for a command.**
+    ```bash
+      man ls
+14. **To clear the terminal**
+    ```bash
+    clear
+
+
+
+   
