@@ -4,11 +4,10 @@
 
 1. **To check in which directory we are use.**
    ```bash
-    pwd
+   pwd
 2. **To check list of files.**
    ```bash
    ls
-   ls -ltr 
 3. **To create a files like pdf,dock,txt,yaml,py,etc.**
    ```bash
    touch filename
@@ -48,14 +47,14 @@
      cp file1.txt /home/ubuntu/second # To move the file to another folder ore directory
 12. **Moves or renames files or directories.**
     ```bash
-      mv file1.txt /home/ubuntu/second
+    mv file1.txt /home/ubuntu/second
 13. **Displays the manual for a command.**
     ```bash
-      man ls
+    man ls
 14. **To clear the terminal**
     ```bash
     clear
 15. **To list the hidden files**
     ```bash
-      ls -a
-      ls -ltr
+    ls -a
+    ls -ltr
