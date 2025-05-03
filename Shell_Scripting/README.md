@@ -42,7 +42,7 @@
  10. **Concatenates and displays the content of a file.**
      ```bash
      cat first.tx
- 11. **cp: Copies files or directories.**
+ 11. **Copies files or directories.**
      ```bash
      cp file1.txt file2.txt
      cp file1.txt /home/ubuntu/second # To move the file to another folder ore directory
