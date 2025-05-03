@@ -44,8 +44,8 @@
      cat first.tx
  11. **cp: Copies files or directories.**
      ```bash
-    cp file1.txt file2.txt
-    cp file1.txt /home/ubuntu/second # To move the file to another folder ore directory
+     cp file1.txt file2.txt
+     cp file1.txt /home/ubuntu/second # To move the file to another folder ore directory
 12. **Moves or renames files or directories.**
     ```bash
       mv file1.txt /home/ubuntu/second
