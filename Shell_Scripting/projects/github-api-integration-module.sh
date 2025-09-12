@@ -1,5 +1,7 @@
 #!/bin/bash
 
+######################################################################################
+# Author: Chakradhar
 # About This Script
 #
 # Purpose:
@@ -64,6 +66,7 @@
 # - **Data Parsing**: Uses `jq` to filter and display users with specific read access permissions.
 # - **Temporary File Cleanup**: Automatically removes temporary files to keep the system clean.
 # - **User-Friendly**: Provides helpful error messages and guides for resolving issues like missing dependencies or incorrect input.
+##########################################################################################################################
 
 # GitHub API URL and authentication details
 API_URL="https://api.github.com"
