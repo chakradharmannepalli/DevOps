@@ -1,5 +1,11 @@
 #!/bin/bash
 
+##########################
+# Author : Chakradhar
+# Version : V1
+# This Script push the jenkins logs to S3 Bucket
+##########################
+
 # Variables
 JENKINS_HOME="/var/lib/jenkins"  # Replace with your Jenkins home directory
 S3_BUCKET="s3://your-s3-bucket-name"  # Replace with your S3 bucket name
