@@ -67,13 +67,7 @@ Mastering the terminal starts with Bash itself. These concepts are the foundatio
     ls -a
     ls -ltr
 
-# ⚡️ The Ultimate Shell Scripting & CLI Toolkit
 
-This guide compiles essential and advanced command-line utilities for efficient system administration, diagnostics, and development in Unix-like environments.
-
----
-
-## 📜 I. Shell Scripting Fundamentals: Tips & Tricks
 
 Mastering the terminal starts with Bash itself. These concepts are the foundation for automating tasks using the tools listed below.
 
@@ -112,8 +106,8 @@ Most of the advanced tools listed in sections below are installed using your dis
 | **macOS (Homebrew)** | `brew install <tool-name>` | `brew install mosh progress` |
 
 ***Usage Tip:*** If a modern tool is a drop-in replacement (like `exa` for `ls`), consider creating an alias in your `~/.bashrc` or `~/.zshrc`:
-```bash
-      alias ls='exa'
+     
+     alias ls='exa'
      alias grep='rg'
      alias find='fd'
 
