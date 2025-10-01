@@ -1,0 +1,22 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: Create Ec2 Instance
+      amazon.aws.ec2_instance:
+        name: "{{item.name}}"
+        key_name: "test1"
+        instance_type: t2.micro
+        security_group: default
+        region: us-east-1
+        aws_access_key: "{{ec2_access_key}}"
+        aws_secret_key: "{{ec2_secret_key}}"
+        network:
+          assign_public_ip: true
+        image_id: "{{item.image}}"
+        tags:
+          environment: "{{item.name}}"
+      loop:
+        - { image: "ami-0fd3ac4abb734302a", name: "node-1" } # Update AMI ID according 
+        - { image: "ami-0360c520857e3138f", name: "node-2" } # to your account
+        - { image: "ami-0bbdd8c17ed981ef9", name: "node-3" }
