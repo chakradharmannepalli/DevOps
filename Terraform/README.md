@@ -1,4 +1,4 @@
-# Terraform Introduction and Examples
+# Terraform
 
 ## What is Terraform?
 
@@ -59,11 +59,59 @@ Here's a simple example to create an AWS S3 bucket. This assumes you have AWS cr
 - AWS CLI installed and configured.
 - Create a new directory, e.g., `terraform-s3-example`, and add the files below.
 
+#### Configuring AWS
+To use Terraform with AWS, you need to set up your AWS credentials securely. Terraform uses the same credential sources as the AWS CLI. Here's how to configure it:
+
+1. **Install AWS CLI**: Download and install from [AWS CLI documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html). Verify with `aws --version`.
+   ```bash
+   curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+   unzip awscliv2.zip
+   sudo ./aws/install
+
+2. **Create an IAM User (Recommended for Security)**:
+   - Log in to the [AWS IAM Console](https://console.aws.amazon.com/iam/).
+   - Create a new IAM user (e.g., "terraform-user") with programmatic access.
+   - Attach policies like `AmazonS3FullAccess` (for this S3 example) or more restrictive ones like `AmazonS3BucketCreation` for least privilege.
+   - Note the Access Key ID and Secret Access Key (download the CSV—do not share it).
+
+3. **Configure Credentials**:
+   - Run `aws configure` in your terminal.
+   - Enter:
+     - AWS Access Key ID: [Your Access Key]
+     - AWS Secret Access Key: [Your Secret Key]
+     - Default region name: e.g., `us-west-2`
+     - Default output format: `json` (optional)
+   - This creates `~/.aws/credentials` and `~/.aws/config` files.
+
+4. **Alternative Methods** (for CI/CD or advanced setups):
+   - **Environment Variables**: Set `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_DEFAULT_REGION`.
+   - **IAM Roles**: For EC2 instances or ECS tasks, attach an IAM role to the instance.
+   - **AWS SSO or MFA**: Use `aws configure sso` for federated access.
+   - Verify setup: Run `aws sts get-caller-identity` to check your identity.
+
+**Security Note**: Never commit credentials to Git. Use IAM roles or tools like AWS Secrets Manager for production. For this example, ensure the user has S3 permissions.
+5. **Install Terraform**
+  ```bash wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(grep -oP '(?<=UBUNTU_CODENAME=).*' /etc/os-release || lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+  sudo apt update && sudo apt install terraform
+```
+### Prerequisites
+- Install Terraform: Download from [terraform.io](https://www.terraform.io/downloads).
+- AWS CLI installed and configured.
+
 ### main.tf
 ```hcl
 # Configure the AWS Provider
 provider "aws" {
-  region = "us-west-2"  # Change to your preferred region
+  region = "us-east-1"  # Change to your preferred region
+}
+
+# Create an ec2 Instance
+resource "aws_instace" "example"{
+  ami="ami-053b0d53c279acc90" # Specify an apporiate AMI ID
+  instance_type= "t2.micro" # Provide your instance type
+  subnet_id= "subnet-446411451454" # Provide you subnet ID
+  key_name= "aws_key" # Provide your key name
 }
 
 # Create an S3 bucket
@@ -82,3 +130,9 @@ resource "random_string" "suffix" {
   special = false
   upper   = false
 }
+```
+6.**How to Run**
+  - Initialize: `terraform init`
+  - Plan: `terraform plan` (preview changes)
+  - Apply: `terraform apply` (type "yes" to confirm)
+  - Destroy: `terraform destroy` (clean up resources)
