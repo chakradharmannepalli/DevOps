@@ -78,7 +78,7 @@ To use Terraform with AWS, you need to set up your AWS credentials securely. Ter
    - Enter:
      - AWS Access Key ID: [Your Access Key]
      - AWS Secret Access Key: [Your Secret Key]
-     - Default region name: e.g., `us-west-2`
+     - Default region name: e.g., `us-east-1`
      - Default output format: `json` (optional)
    - This creates `~/.aws/credentials` and `~/.aws/config` files.
 
