@@ -57,7 +57,6 @@ Here's a simple example to create an AWS S3 bucket. This assumes you have AWS cr
 ### Prerequisites
 - Install Terraform: Download from [terraform.io](https://www.terraform.io/downloads).
 - AWS CLI installed and configured.
-- Create a new directory, e.g., `terraform-s3-example`, and add the files below.
 
 #### Configuring AWS
 To use Terraform with AWS, you need to set up your AWS credentials securely. Terraform uses the same credential sources as the AWS CLI. Here's how to configure it:
@@ -95,9 +94,6 @@ To use Terraform with AWS, you need to set up your AWS credentials securely. Ter
   echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(grep -oP '(?<=UBUNTU_CODENAME=).*' /etc/os-release || lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
   sudo apt update && sudo apt install terraform
 ```
-### Prerequisites
-- Install Terraform: Download from [terraform.io](https://www.terraform.io/downloads).
-- AWS CLI installed and configured.
 
 ### main.tf
 ```hcl
