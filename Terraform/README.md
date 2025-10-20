@@ -89,6 +89,7 @@ To use Terraform with AWS, you need to set up your AWS credentials securely. Ter
    - Verify setup: Run `aws sts get-caller-identity` to check your identity.
 
 **Security Note**: Never commit credentials to Git. Use IAM roles or tools like AWS Secrets Manager for production. For this example, ensure the user has S3 permissions.
+
 5. **Install Terraform**:
   ```bash
    wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
