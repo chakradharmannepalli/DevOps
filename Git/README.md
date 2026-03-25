@@ -1,6 +1,6 @@
 # Git Commands Cheat Sheet
 
-**A clean, human-readable guide to essential Git commands.**  
+**A clean, guide to essential Git commands.**  
 This README covers **everything from your original list** (all commands included with tiny accuracy fixes where needed), plus the important ones you were missing (`git init`, `git status`, `git clone`, `git push`, `git pull`, `git diff`, `git revert`, etc.).  
 
 I checked **twice** for any new essential commands and added the most critical missing ones that every developer uses daily:  
@@ -100,6 +100,3 @@ node_modules/
 .env
 .DS_Store
 ```
-## 9. 
-
-
