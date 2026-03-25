@@ -100,3 +100,13 @@ node_modules/
 .env
 .DS_Store
 ```
+## 9. Other Useful Commands
+
+| Command | Description |
+|--------|-------------|
+| `git update-ref -d HEAD` | Deletes all commit history but keeps your files (very powerful — use carefully) |
+| `git reflog` | Shows the full history of every action you did (even deleted commits). Life-saver when you mess up! |
+| `git stash` | Temporarily saves uncommitted changes |
+| `git stash list` | Lists all saved stashes |
+| `git stash pop` | Restores the most recent stash |
+| `git tag -a v1.0 -m "Version 1.0"` | Creates an annotated tag (great for releases) |
